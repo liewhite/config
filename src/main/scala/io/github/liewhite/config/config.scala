@@ -19,13 +19,10 @@ def loadConfig[A: Descriptor](
 }
 def describeConfig[A: Descriptor](
     path: String = "./conf/config.yaml"
-) = {
-  for {
-    _ <- ZIO.unit
-    source = YamlConfigSource.fromYamlPath(Path.of(path))
-    desc = descriptor[A]
-    doc = generateDocs(desc).toTable.toGithubFlavouredMarkdown
-  } yield doc
+): zio.config.Table = {
+  val desc = descriptor[A]
+  val doc = generateDocs(desc).toTable
+  doc
 }
 
 // object App extends ZIOAppDefault {
