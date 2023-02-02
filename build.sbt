@@ -12,11 +12,9 @@ lazy val root = project
   .in(file("."))
   .settings(
     name := "config",
-    libraryDependencies += "io.github.liewhite" %% "json" % "1.0.1",
-    libraryDependencies ++= Seq(
-      "io.circe" %% "circe-core" % "0.14.3",
-      "io.circe" %% "circe-parser" % "0.14.3",
-      "io.circe" %% "circe-yaml" % "0.14.1"
-    ),
+    libraryDependencies += "dev.zio" %% "zio-config" % "3.0.7",
+    libraryDependencies += "dev.zio" %% "zio-config-magnolia" % "3.0.7",
+    libraryDependencies += "dev.zio" %% "zio-config-typesafe" % "3.0.7",
+    libraryDependencies += "dev.zio" %% "zio-config-yaml" % "3.0.7",
     libraryDependencies += "org.scalameta" %% "munit" % "0.7.29" % Test,
   )
