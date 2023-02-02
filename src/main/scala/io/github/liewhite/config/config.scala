@@ -1,9 +1,8 @@
-
+package io.github.liewhite.config
 
 import zio.*
 import zio.config._
-import zio.config.magnolia.Descriptor
-import zio.config.magnolia.descriptor
+import zio.config.magnolia.*
 import zio.config.yaml.YamlConfigSource
 
 import java.nio.file.Path
